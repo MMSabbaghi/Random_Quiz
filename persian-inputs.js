@@ -10,7 +10,7 @@
   }
 
   function enhanceInput(input) {
-    if (input.__enhanced) return;
+    if (input.__enhanced || input.type !== "text") return;
     input.__enhanced = true;
 
     const originalDescriptor = Object.getOwnPropertyDescriptor(

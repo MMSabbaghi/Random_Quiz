@@ -8,19 +8,33 @@ function toPersianDigits(str) {
 }
 
 function createRangeItem(rangeData = null) {
+  const fileId = crypto.randomUUID();
   const div = document.createElement("div");
   div.className = "range-item";
   div.innerHTML = `
-    <div class="range-header">
+  <div class="range-header my-2">
     <div class="flex gap-2">
-      <input type="text" class="border rounded p-1 w-36 range-name" placeholder="نام محدوده">
+      <input type="text" class="border rounded p-1 w-36 range-name" placeholder="عنوان فصل">
       <input data-number-input="true" data-float="false" class="border rounded p-1 range-count" placeholder="تعداد سوال هر نفر">
-      <button class="bg-red-500 text-white px-2 rounded remove-range">حذف</button>
+      <div class="file-input">
+      <input type="file" id="file" accept="image/*" multiple class="file range-images">
+      <label for="file" class="btn px-4 py-2 rounded">
+      <i class="bi bi-upload"></i>
+      <span class="mx-2">
+      آپلود تصویر سوال
+      </span>
+      </label>
+      </div>
     </div>
-      <span class="range-total"> بدون سوال</span>
-    </div>
-    <input type="file" accept="image/*" class="range-images border rounded p-1 w-full mt-2" multiple>
-    <div class="preview mt-2"></div>
+    <div class="flex items-center gap-2">
+    <span class="range-total"></span>
+    <button class="btn px-2 py-1 bg-red-500 text-white rounded remove-range">
+    <i class="bi bi-trash3"></i>
+    </button>
+      </div>
+    </div>   
+
+    <div class="preview"></div>
   `;
 
   const previewDiv = div.querySelector(".preview");

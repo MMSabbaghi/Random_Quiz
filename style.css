@@ -2,6 +2,55 @@
 body {
   font-family: "Vazirmatn", sans-serif;
 }
+
+:root {
+  --primary: #333;
+  --primary-dark: #444;
+  --border: #ddd;
+  --radius: 6px;
+  --transition: 0.3s ease;
+}
+
+input,
+.btn {
+  color: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.btn {
+  background-color: var(--primary);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn,
+.add-btn:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px dashed var(--primary);
+  color: var(--primary);
+  padding: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
 #ranges {
   display: flex;
   flex-direction: column;
@@ -18,7 +67,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
   font-weight: bold;
 }
 .preview {
@@ -114,4 +162,31 @@ body {
   max-width: 90%;
   max-height: 90%;
   border-radius: 6px;
+}
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.file-input label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adding an outline to the label on focus */
+input:focus + label {
+  outline: 1px solid #000;
+  outline: -webkit-focus-ring-color auto 2px;
+}
+
+.export-btns {
+  border: 1px dashed var(--border);
+  padding: 0 8px;
+  border-radius: var(--radius);
+  justify-content: center;
 }
