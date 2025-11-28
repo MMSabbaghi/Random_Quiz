@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>تقسیم سوال‌های تصویری بدون تکرار</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-6xl mx-auto bg-white p-6 rounded shadow">
+    <div class="flex items-center justify-between mb-2">
+      <h1 class="text-2xl font-bold">ساخت آزمون با سوالات تصادفی</h1>
+      <div>
+        <button id="exportJson" class="bg-yellow-500 text-white px-4 py-2 rounded">ذخیره آزمون</button>
+        <input type="file" id="importJson" class="hidden">
+        <button id="importJsonBtn" class="bg-indigo-500 text-white px-4 py-2 rounded">ورود اطلاعات</button>
+      </div>
+    </div>
+
+    <textarea id="names" rows="5" class="w-full border rounded p-2"
+      placeholder="نام دانش‌آموزان هر کدام در یک خط"></textarea>
+
+    <div id="ranges"></div>
+    <button id="addRange" style="width: 100%;" class="bg-green-500 text-white px-4 py-2 rounded mt-1 mb-1">افزودن
+      فصل</button>
+
+    <button id="generate" class="bg-blue-500 text-white px-4 py-2 rounded mt-2 mb-2">تولید آزمون</button>
+    <button onclick="window.print()" class="bg-gray-700 text-white px-4 py-2 rounded mt-2 mb-2">چاپ خروجی</button>
+
+    <div id="printable" class="overflow-auto mt-4"></div>
+  </div>
+
+  <!-- Modal برای نمایش بزرگ تصویر -->
+  <div id="modal" class="modal flex" style="display: none;">
+    <img id="modal-img" src="">
+  </div>
+  <script src="persian-inputs.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
