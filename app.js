@@ -14,8 +14,8 @@ function createRangeItem(rangeData = null) {
   div.innerHTML = `
   <div class="range-header my-2">
     <div class="flex gap-2">
-      <input type="text" class="border rounded p-1 w-36 range-name" placeholder="عنوان فصل">
-      <input data-number-input="true" data-float="false" class="border rounded p-1 range-count" placeholder="تعداد سوال هر نفر">
+      <input type="text" class="border rounded p-1 w-36 range-name" placeholder="عنوان مبحث">
+      <input data-number-input="true" data-float="false" class="border rounded p-1 range-count" placeholder="تعداد سوال از مبحث">
       <div class="file-input">
       <input type="file" id="file" accept="image/*" multiple class="file range-images">
       <label for="file" class="btn px-4 py-2 rounded">
